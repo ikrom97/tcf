@@ -6,7 +6,7 @@
 
     <img
       class="tournaments-selected-screen__image"
-      src="{{ $data->tournament->image }}"
+      src="{{ asset($data->tournament->image) }}"
       width="600"
       height="340"
       alt="{{ $data->tournament->title }}"
