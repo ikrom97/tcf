@@ -17,7 +17,7 @@
         {{ Carbon\Carbon::create($data->article->date)->isoFormat('DD.MM.YYYY') }}
       </time>
 
-      <h2 class="articles-selected-screen__title">Команды Таджикистана поднялись в турнирной таблице Шахматной олимпиады в Ченнаи</h2>
+      <h2 class="articles-selected-screen__title">{{ $article->title }}</h2>
 
       <div class="articles-selected-screen__body">{!! $data->article->content !!}</div>
 

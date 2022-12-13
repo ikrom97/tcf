@@ -22,7 +22,7 @@
               {{ Carbon\Carbon::create($article->date)->isoFormat('DD.MM.YYYY') }}
             </time>
 
-            <h3 class="articles-card__title">По итогам Шахматной олимпиады в Индии трое шахматистов Таджикистана выполнили нормативы международных мастеров.</h3>
+            <h3 class="articles-card__title">{{ $article->title }}</h3>
 
             <div class="articles-card__description">{!! strip_tags($article->content) !!}</div>
 
