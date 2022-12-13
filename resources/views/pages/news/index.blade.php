@@ -24,7 +24,7 @@
 
             <h3 class="news-card__title">{{ $news->title }}</h3>
             <div class="news-card__description">
-              {{ strip_tags($news->content) }}
+              {!! strip_tags($news->content) !!}
             </div>
 
             <a class="news-card__button button" href="{{ route('news', $news->slug) }}">

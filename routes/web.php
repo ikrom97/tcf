@@ -25,6 +25,7 @@ Route::get('/articles/{slug?}', [PagesController::class, 'articles'])->name('art
 Route::get('/contacts', [PagesController::class, 'contacts'])->name('contacts');
 
 Route::redirect('/category/turniri/{path}', '/tournaments/{slug?}');
+Route::redirect('/category/novosti', '/news/{slug?}');
 Route::redirect('/category/novosti/{path}', '/news/{slug?}');
 Route::redirect('/rating', '/ratings');
 Route::redirect('/en', '/');

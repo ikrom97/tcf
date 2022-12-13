@@ -24,7 +24,7 @@
 
             <h3 class="articles-card__title">По итогам Шахматной олимпиады в Индии трое шахматистов Таджикистана выполнили нормативы международных мастеров.</h3>
 
-            <div class="articles-card__description">{{ strip_tags($article->content) }}</div>
+            <div class="articles-card__description">{!! strip_tags($article->content) !!}</div>
 
             <a
               class="articles-card__button button"

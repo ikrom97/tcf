@@ -28,7 +28,7 @@
                 </time>
                 <h3 class="tournaments-card__title">{{ $tournament->title }}</h3>
                 <div class="tournaments-card__description">
-                  {{ strip_tags($tournament->content) }}
+                  {!! strip_tags($tournament->content) !!}
                 </div>
                 <a
                   class="tournaments-card__more"
