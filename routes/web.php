@@ -29,6 +29,7 @@ Route::redirect('/category/novosti/{path}', '/news/{slug?}');
 Route::redirect('/rating', '/ratings');
 Route::redirect('/en', '/');
 Route::redirect('/tj', '/');
+Route::redirect('/admin', 'https://demo.tjchess.tj/admin');
 
 $news = News::get();
 
