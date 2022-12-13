@@ -29,16 +29,18 @@ Route::redirect('/category/novosti/{path}', '/news/{slug?}');
 Route::redirect('/rating', '/ratings');
 Route::redirect('/en', '/');
 Route::redirect('/tj', '/');
-Route::redirect('{path}', '/');
 
 $news = News::get();
 
 foreach ($news as $new) {
-  Route::redirect('/' . $new->slug, '/news//' . $news->slug);
+    Route::redirect('/' . $new->slug, '/news/' . $new->slug);
+  }
+
+  $articles = Article::get();
+
+  foreach ($articles as $article) {
+  Route::redirect('/' . $article->slug, '/articles/' . $article->slug);
 }
 
-$articles = Article::get();
+Route::redirect('{path}', '/');
 
-foreach ($articles as $article) {
-  Route::redirect('/' . $article->slug, '/articles//' . $article->slug);
-}
