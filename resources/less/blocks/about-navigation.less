@@ -1,6 +1,6 @@
 .about-navigation {
   z-index: 1;
-  display: flex;
+  display: none;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -42,8 +42,19 @@
   }
 }
 
+.to-main {
+    margin-left: auto;
+    margin-top: 40px;
+    max-width: max-content;
+}
+
 @media (min-width: @large) {
+    .to-main {
+        display: none !important;
+    }
+
   .about-navigation {
+    display: flex;
     position: static;
     background-color: transparent;
     flex-direction: row;
