@@ -40,13 +40,7 @@ class PlayersSeeder extends Seeder
         $player->rank = (int)explode('#', $this->stats, 2)[1];
         $player->title = $item->filter('.master-players-chess-title')->text();
         $player->country = $item->filter('.post-author-meta')->text();
-        if ($player->country == 'Russia') {
-          $player->flag = 'https://countryflagsapi.com/png/rus';
-        } else if ($player->country == 'FIDE') {
-          $player->flag = '//upload.wikimedia.org/wikipedia/en/thumb/5/5b/Fidelogo.svg/133px-Fidelogo.svg.png?20110815110418';
-        } else {
-          $player->flag = 'https://countryflagsapi.com/png/' . $player->country;
-        }
+        $player->flag = 'images/flags/' . str_replace(' ', '', strtolower($player->country)) . '.png';
         $player->global = true;
         $player->save();
       });
@@ -64,7 +58,7 @@ class PlayersSeeder extends Seeder
       $item->filter('.user-chess-title')->getNode(0) &&
         $player->title = $item->filter('.user-chess-title')->text();
       $player->country = 'Tajikistan';
-      $player->flag = 'https://countryflagsapi.com/png/tj';
+      $player->flag = 'images/flags/tajikistan.png';
       $player->global = false;
       $player->save();
     });

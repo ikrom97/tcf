@@ -192,7 +192,8 @@
                   alt="{{ $player->name }}"
                   width="120"
                   height="185"
-                  loading="lazy" />
+                  loading="lazy"
+                  onerror="this.src='{{ asset('images/avatar.webp') }}'"/>
 
                 <div class="players-card__inner">
                   <h3 class="players-card__name">

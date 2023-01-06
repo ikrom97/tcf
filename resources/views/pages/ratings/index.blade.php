@@ -42,7 +42,8 @@
                   alt="{{ $player->name }}"
                   width="120"
                   height="185"
-                  loading="lazy">
+                  loading="lazy"
+                  onerror="this.src='{{ asset('images/avatar.webp') }}'">
 
                 <div class="players-card__inner">
                   <h3 class="players-card__name">
@@ -69,7 +70,7 @@
                         <img
                           class="players-card__country"
                           src="{{ $player->flag }}"
-                          alt="United States"
+                          alt="{{ $player->country }}"
                           width="80"
                           height="56">
                       </dd>
@@ -102,7 +103,8 @@
                   alt="{{ $player->name }}"
                   width="120"
                   height="185"
-                  loading="lazy">
+                  loading="lazy"
+                  onerror="this.src='{{ asset('images/avatar.webp') }}'">
 
                 <div class="players-card__inner">
                   <h3 class="players-card__name">
@@ -129,7 +131,7 @@
                         <img
                           class="players-card__country"
                           src="{{ $player->flag }}"
-                          alt="United States"
+                          alt="Tajikistan"
                           width="80"
                           height="56">
                       </dd>
