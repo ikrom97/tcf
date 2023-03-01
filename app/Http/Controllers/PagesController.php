@@ -28,8 +28,7 @@ class PagesController extends Controller
       ->take(10)
       ->get();
 
-    $data->news = News::where('date', '<', $currentDate)
-      ->orderBy('date', 'desc')
+    $data->news = News::orderBy('date', 'desc')
       ->paginate(10);
 
     return view('pages.home.index', compact('data'));
