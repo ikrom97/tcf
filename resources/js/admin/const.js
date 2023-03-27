@@ -14,6 +14,11 @@ export const APIRoute = {
   TOURNAMENTS_SINGLE: '/api/tournaments/:id',
   TOURNAMENTS_UPDATE: '/api/tournaments/update',
   TOURNAMENTS_DELETE: '/api/tournaments/delete',
+
+  NEWS: '/api/news',
+  NEWS_SINGLE: '/api/news/:id',
+  NEWS_UPDATE: '/api/news/update',
+  NEWS_DELETE: '/api/news/delete',
 };
 
 export const dataGridLocalText = {

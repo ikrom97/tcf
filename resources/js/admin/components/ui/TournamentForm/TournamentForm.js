@@ -67,7 +67,7 @@ function TournamentForm({ tournament }) {
           <TextField
             fullWidth
             name="title"
-            label="Название препарата"
+            label="Название"
             defaultValue={tournament?.title}
             type="text"
             required

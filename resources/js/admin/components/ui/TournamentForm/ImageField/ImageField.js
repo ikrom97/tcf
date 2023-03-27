@@ -21,7 +21,7 @@ function ImageField(props) {
         </>
         :
         <Typography className={style.imageFieldText}>
-          Нажмите чтобы выбрать изображение для препарата*
+          Нажмите чтобы выбрать изображение*
         </Typography>
       }
       <input

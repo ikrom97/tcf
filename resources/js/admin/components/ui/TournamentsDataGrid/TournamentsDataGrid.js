@@ -15,7 +15,7 @@ function TournamentsDataGrid() {
 
   const handleDeleteSelectedButtonClick = () => {
     const isConfirmed = window.confirm(
-      `Вы уверены что хотите безвозвратно удалить выбранные препараты? \nВыбрано ${selection.length}`
+      `Вы уверены что хотите безвозвратно удалить выбранные турниры? \nВыбрано ${selection.length}`
     );
 
     isConfirmed && axios.post(APIRoute.TOURNAMENTS_DELETE, { IDs: selection })

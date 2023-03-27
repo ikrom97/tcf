@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\TournamentController;
 use App\Models\Article;
@@ -38,6 +39,12 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::post('/api/tournaments', [TournamentController::class, 'store']);
   Route::post('/api/tournaments/update', [TournamentController::class, 'update']);
   Route::post('/api/tournaments/delete', [TournamentController::class, 'destroy']);
+
+  Route::get('/api/news', [NewsController::class, 'index']);
+  Route::get('/api/news/{news}', [NewsController::class, 'single']);
+  Route::post('/api/news', [NewsController::class, 'store']);
+  Route::post('/api/news/update', [NewsController::class, 'update']);
+  Route::post('/api/news/delete', [NewsController::class, 'destroy']);
 });
 
 

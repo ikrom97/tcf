@@ -22,7 +22,7 @@ function BodyField(props) {
   return (
     <>
       <ReactQuill
-        placeholder="Опишите препарат"
+        placeholder="Описание"
         modules={{
           toolbar: [
             [{ header: [2, 3, 4, 5, 6] }],

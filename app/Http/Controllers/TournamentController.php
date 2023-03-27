@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Tournament;
 use Cviebrock\EloquentSluggable\Services\SlugService;
-use DateTime;
 use Illuminate\Http\Request;
 
 class TournamentController extends Controller

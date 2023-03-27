@@ -20,7 +20,8 @@ class CreateArticlesTable extends Migration
       $table->timestamp('date');
       $table->string('image');
       $table->string('thumb_image');
-      $table->text('content');
+      $table->longText('content')->nullable();
+      $table->string('file')->nullable();
       $table->timestamps();
     });
   }
