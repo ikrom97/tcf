@@ -115,4 +115,9 @@ class PagesController extends Controller
   {
     return view('pages.contacts.index');
   }
+
+  public function admin()
+  {
+    return view('admin.index');
+  }
 }

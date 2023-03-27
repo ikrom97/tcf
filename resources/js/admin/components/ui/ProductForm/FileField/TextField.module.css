@@ -1,0 +1,15 @@
+.fileField {
+  position: relative;
+  cursor: pointer;
+}
+
+.fileField * {
+  pointer-events: none;
+}
+
+.fileField p {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);  
+}

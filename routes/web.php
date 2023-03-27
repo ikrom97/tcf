@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\TournamentController;
 use App\Models\Article;
 use App\Models\News;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +25,21 @@ Route::get('/tournaments/{slug?}', [PagesController::class, 'tournaments'])->nam
 Route::get('/ratings', [PagesController::class, 'ratings'])->name('ratings');
 Route::get('/articles/{slug?}', [PagesController::class, 'articles'])->name('articles');
 Route::get('/contacts', [PagesController::class, 'contacts'])->name('contacts');
+
+Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('/auth/check', [AuthController::class, 'check'])->name('auth.check');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+Route::group(['middleware' => ['AuthCheck']], function () {
+  Route::get('/admin/{path?}/{path2?}/{path3?}', [PagesController::class, 'admin'])->name('admin');
+
+  Route::get('/api/tournaments', [TournamentController::class, 'index']);
+  Route::get('/api/tournaments/{tournament}', [TournamentController::class, 'single']);
+  Route::post('/api/tournaments', [TournamentController::class, 'store']);
+  Route::put('/api/tournaments', [TournamentController::class, 'update']);
+  Route::delete('/api/tournaments/{tournament}', [TournamentController::class, 'destroy']);
+});
+
 
 Route::redirect('/category/turniri/page/{path}', '/tournaments/{slug?}');
 Route::redirect('/category/turniri/{path}', '/tournaments/{slug?}');
@@ -70,7 +87,6 @@ Route::redirect('/author/sayfiddin', '/');
 Route::redirect('/category/turniri/page/5/{path}', '/tournaments');
 Route::redirect('/author/fedshah/page/{path}', '/');
 Route::redirect('/en/contacts-2', '/contacts');
-Route::redirect('/admin', 'https://demo.tjchess.tj/admin');
 
 $news = News::get();
 

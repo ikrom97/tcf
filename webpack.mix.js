@@ -11,7 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.less('resources/less/style.less', 'public/css/style.min.css')
+mix
+  .js('resources/js/admin/index.js', 'public/js/admin.min.js')
+  .react()
+  .js('resources/js/auth/auth.js', 'public/js/auth.min.js')
+  .react()
+  .less('resources/less/style.less', 'public/css/style.min.css')
   .sourceMaps()
   .webpackConfig({
     devtool: 'source-map'

@@ -15,9 +15,9 @@ class DatabaseSeeder extends Seeder
   public function run()
   {
     User::create([
-      'name' => 'Content Manager',
-      'email' => 'admin@chess.tj',
-      'password' => bcrypt('FYDw6tkH'),
+      'login' => 'admin@chess.tj',
+      'role' => 'admin',
+      'password' => bcrypt('aHq7UoXD'),
     ]);
 
     $this->call([
