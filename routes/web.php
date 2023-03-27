@@ -36,8 +36,8 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::get('/api/tournaments', [TournamentController::class, 'index']);
   Route::get('/api/tournaments/{tournament}', [TournamentController::class, 'single']);
   Route::post('/api/tournaments', [TournamentController::class, 'store']);
-  Route::put('/api/tournaments', [TournamentController::class, 'update']);
-  Route::delete('/api/tournaments/{tournament}', [TournamentController::class, 'destroy']);
+  Route::post('/api/tournaments/update', [TournamentController::class, 'update']);
+  Route::post('/api/tournaments/delete', [TournamentController::class, 'destroy']);
 });
 
 

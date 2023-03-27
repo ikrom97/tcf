@@ -10,8 +10,10 @@ export const AdminRoute = {
 };
 
 export const APIRoute = {
-  TOURNAMENTS: 'tournaments',
-  TOURNAMENTS_SINGLE: 'tournaments/:id',
+  TOURNAMENTS: '/api/tournaments',
+  TOURNAMENTS_SINGLE: '/api/tournaments/:id',
+  TOURNAMENTS_UPDATE: '/api/tournaments/update',
+  TOURNAMENTS_DELETE: '/api/tournaments/delete',
 };
 
 export const dataGridLocalText = {

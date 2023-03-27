@@ -8,6 +8,8 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>Админ панель ФШТ (Федерация шахмат Таджикистана)</title>
+
+  <script defer="defer" src="{{ asset('js/admin.min.js') }}"></script>
 </head>
 
 <body class="page__body">

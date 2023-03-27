@@ -1,8 +1,8 @@
 import { Box, List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
-import MedicationIcon from '@mui/icons-material/Medication';
-import CategoryIcon from '@mui/icons-material/Category';
-import TagIcon from '@mui/icons-material/Tag';
+import TourIcon from '@mui/icons-material/Tour';
+import NewspaperIcon from '@mui/icons-material/Newspaper';
+import ArticleIcon from '@mui/icons-material/Article';
 import { AdminRoute } from '../../../const';
 
 function PageNavigation() {
@@ -19,25 +19,25 @@ function PageNavigation() {
           <ListItemText primary="Вернуться на сайт" />
         </ListItemButton>
 
-        <ListItemButton href={AdminRoute.PRODUCTS}>
+        <ListItemButton href={AdminRoute.TOURNAMENTS}>
           <ListItemIcon>
-            <MedicationIcon />
+            <TourIcon />
           </ListItemIcon>
-          <ListItemText primary="Препараты" />
+          <ListItemText primary="Турниры" />
         </ListItemButton>
 
-        <ListItemButton href={AdminRoute.CATEGORIES}>
+        <ListItemButton href={AdminRoute.NEWS}>
           <ListItemIcon>
-            <CategoryIcon />
+            <NewspaperIcon />
           </ListItemIcon>
-          <ListItemText primary="Направлении" />
+          <ListItemText primary="Новости" />
         </ListItemButton>
 
-        <ListItemButton href={AdminRoute.TAGS}>
+        <ListItemButton href={AdminRoute.ARTICLES}>
           <ListItemIcon>
-            <TagIcon />
+            <ArticleIcon />
           </ListItemIcon>
-          <ListItemText primary="Теги" />
+          <ListItemText primary="Статьи" />
         </ListItemButton>
       </List>
     </Box>
