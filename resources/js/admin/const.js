@@ -1,3 +1,37 @@
+export const AppRoute = {
+  Index: '/',
+  Admin: '/admin',
+  Tournaments: {
+    'index': '/admin/tournaments',
+    'create': '/admin/tournaments/create',
+    'edit': '/admin/tournaments/:id/edit',
+  },
+  News: {
+    'index': '/admin/news',
+  },
+  Articles: {
+    'index': '/admin/articles',
+  },
+};
+
+export const ApiRoute = {
+  Tournaments: {
+    'index': '/tournament',
+    'store': '/tournament',
+    'show': '/tournament/:id',
+    'update': '/tournament/:id',
+    'delete': '/tournament/:id',
+    'multidelete': '/tournaments/delete',
+  }
+};
+
+
+
+
+
+
+
+
 export const AdminRoute = {
   HOME: '/',
   ADMIN: '/admin',

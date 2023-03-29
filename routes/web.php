@@ -34,11 +34,14 @@ Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout
 Route::group(['middleware' => ['AuthCheck']], function () {
   Route::get('/admin/{path?}/{path2?}/{path3?}', [PagesController::class, 'admin'])->name('admin');
 
-  Route::get('/api/tournaments', [TournamentController::class, 'index']);
-  Route::get('/api/tournaments/{tournament}', [TournamentController::class, 'single']);
-  Route::post('/api/tournaments', [TournamentController::class, 'store']);
-  Route::post('/api/tournaments/update', [TournamentController::class, 'update']);
-  Route::post('/api/tournaments/delete', [TournamentController::class, 'destroy']);
+  Route::resource('/tournament', TournamentController::class);
+
+  Route::get('/tournament', [TournamentController::class, 'index']);
+  Route::post('/tournament', [TournamentController::class, 'store']);
+  Route::get('/tournament/{id}', [TournamentController::class, 'show']);
+  Route::post('/tournament/{id}', [TournamentController::class, 'update']);
+  Route::delete('/tournament/{id}', [TournamentController::class, 'destroy']);
+  Route::post('/tournaments/delete', [TournamentController::class, 'multidelete']);
 
   Route::get('/api/news', [NewsController::class, 'index']);
   Route::get('/api/news/{news}', [NewsController::class, 'single']);

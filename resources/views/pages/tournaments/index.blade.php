@@ -17,7 +17,7 @@
             <article class="tournaments-card tournaments-card--new">
               <img
                 class="tournaments-card__image"
-                src="{{ $tournament->thumb_image }}"
+                src="{{ $tournament->image ? $tournament->image->src : '' }}"
                 alt="{{ $tournament->title }}"
                 width="300"
                 height="169"
@@ -28,7 +28,7 @@
                 </time>
                 <h3 class="tournaments-card__title">{{ $tournament->title }}</h3>
                 <div class="tournaments-card__description">
-                  {!! strip_tags($tournament->content) !!}
+                  {!! strip_tags($tournament->body) !!}
                 </div>
                 <a
                   class="tournaments-card__more"
@@ -49,7 +49,7 @@
           <article class="tournaments-card">
             <img
               class="tournaments-card__image"
-              src="{{ $tournament->thumb_image }}"
+              src="{{ $tournament->image ? $tournament->image->src : '' }}"
               alt="{{ $tournament->title }}"
               width="300"
               height="169"
@@ -60,7 +60,7 @@
               </time>
               <h3 class="tournaments-card__title">{{ $tournament->title }}</h3>
               <div class="tournaments-card__description">
-                {{ strip_tags($tournament->content) }}
+                {{ strip_tags($tournament->body) }}
               </div>
               <a
                 class="tournaments-card__more"

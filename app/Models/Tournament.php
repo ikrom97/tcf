@@ -21,8 +21,8 @@ class Tournament extends Model
     ];
   }
 
-  public function ticket()
+  public function image()
   {
-    return $this->hasOne(Ticket::class);
+    return $this->belongsTo(Image::class);
   }
 }

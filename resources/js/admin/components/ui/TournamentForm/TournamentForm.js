@@ -4,9 +4,9 @@ import dayjs from 'dayjs';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AdminRoute, APIRoute } from '../../../const';
-import ImageField from './ImageField/ImageField';
-import BodyField from './BodyField/BodyField';
-import FileField from './FileField/FileField';
+import ImageField from '../form/ImageField/ImageField';
+import BodyField from '../form/BodyField';
+import FileField from '../form/FileField/FileField';
 
 function TournamentForm({ tournament }) {
   const navigate = useNavigate();

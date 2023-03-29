@@ -6,7 +6,7 @@
 
     <img
       class="tournaments-selected-screen__image"
-      src="{{ asset($data->tournament->image) }}"
+      src="{{ $data->tournament->image ? $data->tournament->image->src : '' }}"
       width="600"
       height="340"
       alt="{{ $data->tournament->title }}"
@@ -20,7 +20,7 @@
       <h2 class="tournaments-selected-screen__title">{{ $data->tournament->title }}</h2>
 
       <div class="tournaments-selected-screen__body">
-        {!! $data->tournament->content !!}
+        {!! $data->tournament->body !!}
       </div>
 
       <a class="tournaments-selected-screen__all" href="{{ route('tournaments') }}">
