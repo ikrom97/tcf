@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PagesController;
@@ -43,11 +44,19 @@ Route::group(['middleware' => ['AuthCheck']], function () {
   Route::delete('/tournament/{id}', [TournamentController::class, 'destroy']);
   Route::post('/tournaments/delete', [TournamentController::class, 'multidelete']);
 
-  Route::get('/api/news', [NewsController::class, 'index']);
-  Route::get('/api/news/{news}', [NewsController::class, 'single']);
-  Route::post('/api/news', [NewsController::class, 'store']);
-  Route::post('/api/news/update', [NewsController::class, 'update']);
-  Route::post('/api/news/delete', [NewsController::class, 'destroy']);
+  Route::get('/new', [NewsController::class, 'index']);
+  Route::post('/new', [NewsController::class, 'store']);
+  Route::get('/new/{id}', [NewsController::class, 'show']);
+  Route::post('/new/{id}', [NewsController::class, 'update']);
+  Route::delete('/new/{id}', [NewsController::class, 'destroy']);
+  Route::post('/news/delete', [NewsController::class, 'multidelete']);
+
+  Route::get('/article', [ArticleController::class, 'index']);
+  Route::post('/article', [ArticleController::class, 'store']);
+  Route::get('/article/{id}', [ArticleController::class, 'show']);
+  Route::post('/article/{id}', [ArticleController::class, 'update']);
+  Route::delete('/article/{id}', [ArticleController::class, 'destroy']);
+  Route::post('/articles/delete', [ArticleController::class, 'multidelete']);
 });
 
 

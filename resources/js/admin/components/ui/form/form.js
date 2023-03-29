@@ -26,7 +26,7 @@ function Form({ onSubmit, data }) {
       <Grid container spacing={2}>
         {data && <input type="hidden" name="_method" value="PATCH" />}
         <Grid item xs={4}>
-          <ImageField image={data?.image.src} />
+          <ImageField image={data?.image?.src} />
         </Grid>
 
         <Grid item xs={8} />

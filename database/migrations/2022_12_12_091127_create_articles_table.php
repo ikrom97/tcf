@@ -17,11 +17,9 @@ class CreateArticlesTable extends Migration
       $table->id();
       $table->string('title');
       $table->string('slug')->unique();
-      $table->timestamp('date');
-      $table->string('image');
-      $table->string('thumb_image');
-      $table->longText('content')->nullable();
-      $table->string('file')->nullable();
+      $table->timestamp('date')->nullable();
+      $table->longText('body')->nullable();
+      $table->integer('image_id')->nullable();
       $table->timestamps();
     });
   }

@@ -1505,12 +1505,12 @@ class ArticlesSeeder extends Seeder
         }
 
         Article::create([
-          'image' => 'https://tjchess.tj/wp-content/uploads/' . $image->meta_value ?? '',
-          'thumb_image' => 'https://tjchess.tj/wp-content/uploads/' . $image->meta_value ?? '',
-          'date' => $post['post_modified'],
+          // 'image' => 'https://tjchess.tj/wp-content/uploads/' . $image->meta_value ?? '',
+          // 'thumb_image' => 'https://tjchess.tj/wp-content/uploads/' . $image->meta_value ?? '',
           'title' => $post['post_title'],
           'slug' => $post['post_name'],
-          'content' => $post['post_content'],
+          'date' => $post['post_modified'],
+          'body' => $post['post_content'],
         ]);
       }
     }

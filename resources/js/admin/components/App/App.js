@@ -1,12 +1,16 @@
 import './App.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import { AdminRoute, AppRoute } from '../../const';
-import NewsPage from '../pages/NewsPage/NewsPage';
-import NewsShowPage from '../pages/NewsShowPage/NewsShowPage';
+import { AppRoute } from '../../const';
 import PageWrapper from '../layouts/page-wrapper';
 import TournamentsIndex from '../pages/Tournaments/Index';
 import TournamentsCreate from '../pages/tournaments/create';
 import TournamentsEdit from '../pages/tournaments/edit';
+import NewsIndex from '../pages/news';
+import NewsCreate from '../pages/news/create';
+import NewsEdit from '../pages/news/edit';
+import ArticlesIndex from '../pages/articles';
+import ArticlesCreate from '../pages/articles/create';
+import ArticlesEdit from '../pages/articles/edit';
 
 function App() {
   return (
@@ -19,8 +23,13 @@ function App() {
           <Route path={AppRoute.Tournaments['create']} element={<TournamentsCreate />} />
           <Route path={AppRoute.Tournaments['edit']} element={<TournamentsEdit />} />
 
-          <Route path={AdminRoute.NEWS} element={<NewsPage />} />
-          <Route path={AdminRoute.NEWS_SINGLE} element={<NewsShowPage />} />
+          <Route path={AppRoute.News['index']} element={<NewsIndex />} />
+          <Route path={AppRoute.News['create']} element={<NewsCreate />} />
+          <Route path={AppRoute.News['edit']} element={<NewsEdit />} />
+
+          <Route path={AppRoute.Articles['index']} element={<ArticlesIndex />} />
+          <Route path={AppRoute.Articles['create']} element={<ArticlesCreate />} />
+          <Route path={AppRoute.Articles['edit']} element={<ArticlesEdit />} />
         </Route>
       </Routes>
     </BrowserRouter>

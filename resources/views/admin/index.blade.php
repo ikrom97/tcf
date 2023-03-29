@@ -13,6 +13,7 @@
 </head>
 
 <body class="page__body">
+  @csrf
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div class="page__root" id="root"></div>
 </body>

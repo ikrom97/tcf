@@ -8,9 +8,13 @@ export const AppRoute = {
   },
   News: {
     'index': '/admin/news',
+    'create': '/admin/news/create',
+    'edit': '/admin/news/:id/edit',
   },
   Articles: {
     'index': '/admin/articles',
+    'create': '/admin/articles/create',
+    'edit': '/admin/articles/:id/edit',
   },
 };
 
@@ -22,37 +26,23 @@ export const ApiRoute = {
     'update': '/tournament/:id',
     'delete': '/tournament/:id',
     'multidelete': '/tournaments/delete',
+  },
+  News: {
+    'index': '/new',
+    'store': '/new',
+    'show': '/new/:id',
+    'update': '/new/:id',
+    'delete': '/new/:id',
+    'multidelete': '/news/delete',
+  },
+  Articles: {
+    'index': '/article',
+    'store': '/article',
+    'show': '/article/:id',
+    'update': '/article/:id',
+    'delete': '/article/:id',
+    'multidelete': '/articles/delete',
   }
-};
-
-
-
-
-
-
-
-
-export const AdminRoute = {
-  HOME: '/',
-  ADMIN: '/admin',
-  TOURNAMENTS: '/admin/tournaments',
-  TOURNAMENTS_SINGLE: '/admin/tournaments/:id',
-  NEWS: '/admin/news',
-  NEWS_SINGLE: '/admin/news/:id',
-  ARTICLES: '/admin/articles',
-  ARTICLES_SINGLE: '/admin/articles/:id',
-};
-
-export const APIRoute = {
-  TOURNAMENTS: '/api/tournaments',
-  TOURNAMENTS_SINGLE: '/api/tournaments/:id',
-  TOURNAMENTS_UPDATE: '/api/tournaments/update',
-  TOURNAMENTS_DELETE: '/api/tournaments/delete',
-
-  NEWS: '/api/news',
-  NEWS_SINGLE: '/api/news/:id',
-  NEWS_UPDATE: '/api/news/update',
-  NEWS_DELETE: '/api/news/delete',
 };
 
 export const dataGridLocalText = {
