@@ -86,21 +86,38 @@ class ArticleController extends Controller
       $article->update();
 
       if ($request->has('image')) {
-        $image = Image::find($article->image_id);
+        if (!$article->image_id) {
+          $file = $request->file('image');
+          $extension = $file->extension();
+          $fileName = $article->slug . '.' . $extension;
+          $file->move(public_path('/images/articles/'), $fileName);
 
-        file_exists(public_path($image->src))
-          && unlink(public_path($image->src));
+          $image = Image::create([
+            'title' => $fileName,
+            'src' => '/images/articles/' . $fileName,
+            'alt' => $article->title,
+            'extension' => $extension,
+          ]);
 
-        $file = $request->file('image');
-        $extension = $file->extension();
-        $fileName = $article->slug . '.' . $extension;
-        $file->move(public_path('/images/articles/'), $fileName);
+          $article->image_id = $image->id;
+          $article->update();
+        } else {
+          $image = Image::find($article->image_id);
 
-        $image->title = $fileName;
-        $image->src = '/images/articles/' . $fileName;
-        $image->alt = $article->title;
-        $image->extension = $extension;
-        $image->update();
+          file_exists(public_path($image->src))
+            && unlink(public_path($image->src));
+
+          $file = $request->file('image');
+          $extension = $file->extension();
+          $fileName = $article->slug . '.' . $extension;
+          $file->move(public_path('/images/articles/'), $fileName);
+
+          $image->title = $fileName;
+          $image->src = '/images/articles/' . $fileName;
+          $image->alt = $article->title;
+          $image->extension = $extension;
+          $image->update();
+        }
       }
 
       return Article::with('image')->find($id);

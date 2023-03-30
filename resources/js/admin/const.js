@@ -16,6 +16,7 @@ export const AppRoute = {
     'create': '/admin/articles/create',
     'edit': '/admin/articles/:id/edit',
   },
+  Logout: '/auth/logout',
 };
 
 export const ApiRoute = {

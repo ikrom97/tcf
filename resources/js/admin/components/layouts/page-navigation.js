@@ -24,6 +24,10 @@ function PageNavigation() {
         <ListItemButton href={AppRoute.Articles['index']}>
           <ListItemText primary="Статьи" />
         </ListItemButton>
+
+        <ListItemButton href={AppRoute.Logout}>
+          <ListItemText primary="Выйти" />
+        </ListItemButton>
       </List>
     </Box>
   );

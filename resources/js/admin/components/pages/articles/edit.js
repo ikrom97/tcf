@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { generatePath, useParams } from 'react-router-dom';
 import Form from '../../ui/form/form';
 import { ApiRoute, AppRoute } from '../../../const';
+import { toast } from 'react-toastify';
 
 function ArticlesEdit() {
   const [article, setArticle] = useState(null);
@@ -23,7 +24,7 @@ function ArticlesEdit() {
       generatePath(ApiRoute.Articles['update'], { id: article.id }),
       new FormData(evt.target)
     )
-      .then(({ data }) => console.log(data))
+      .then(() => toast.success('Статья успешно сохранена'))
       .catch((error) => console.log(error));
   };
 
