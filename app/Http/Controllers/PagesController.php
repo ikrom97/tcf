@@ -14,11 +14,9 @@ class PagesController extends Controller
 {
   public function home()
   {
-    $currentDate = new DateTime();
     $data = new stdClass();
 
-    $data->tournaments = Tournament::where('date', '<', $currentDate)
-      ->orderBy('date', 'desc')
+    $data->tournaments = Tournament::orderBy('date', 'desc')
       ->paginate(10);
 
     $data->players = Player::where('global', true)
