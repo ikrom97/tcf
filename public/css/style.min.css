@@ -1107,6 +1107,7 @@ a {
 .tournaments-card {
   border-radius: 8px;
   background-color: #e8e0c9;
+  word-break: break-all;
 }
 .tournaments-card--new {
   background-color: #ac7a30;
