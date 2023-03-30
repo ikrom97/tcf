@@ -138,27 +138,7 @@
         <div class="swiper-wrapper">
           @foreach ($data->tournaments as $tournament)
             <div class="swiper-slide">
-              <article class="tournaments-card">
-                <img
-                  class="tournaments-card__image"
-                  src="{{ $tournament->thumb_image }}"
-                  alt="{{ $tournament->title }}"
-                  width="300"
-                  height="169"
-                  loading="lazy">
-                <div class="tournaments-card__inner">
-                  <time class="tournaments-card__time" datetime="{{ $tournament->date }}">
-                    {{ Carbon\Carbon::create($tournament->date)->isoFormat('DD.MM.YYYY') }}
-                  </time>
-                  <h3 class="tournaments-card__title">{{ $tournament->title }}</h3>
-                  <div class="tournaments-card__description">
-                    {{ strip_tags($tournament->content) }}
-                  </div>
-                  <a
-                    class="tournaments-card__more"
-                    href="{{ route('tournaments', $tournament->slug) }}">Подробнее</a>
-                </div>
-              </article>
+              <x-tournament-card :tournament="$tournament" />
             </div>
           @endforeach
         </div>
@@ -257,30 +237,7 @@
         <div class="swiper-wrapper">
           @foreach ($data->news as $news)
             <div class="swiper-slide">
-              <article class="news-card">
-                <img
-                  class="news-card__image"
-                  src="{{ $news->image }}"
-                  width="300"
-                  height="169"
-                  alt="{{ $news->title }}"
-                  loading="lazy">
-
-                <div class="news-card__inner">
-                  <time class="news-card__time" datetime="{{ $news->date }}">
-                    {{ Carbon\Carbon::create($news->date)->isoFormat('DD.MM.YYYY') }}
-                  </time>
-
-                  <h3 class="news-card__title">{{ $news->title }}</h3>
-                  <div class="news-card__description">
-                    {{ strip_tags($news->content) }}
-                  </div>
-
-                  <a class="news-card__button button" href="{{ route('news', $news->slug) }}">
-                    Подробнее
-                  </a>
-                </div>
-              </article>
+              <x-news-card :news="$news" />
             </div>
           @endforeach
         </div>

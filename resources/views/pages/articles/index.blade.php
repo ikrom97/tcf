@@ -8,31 +8,7 @@
 
     <div class="cards-list" id="articles">
       @foreach ($data->articles as $article)
-        <article class="articles-card">
-          <img
-            class="articles-card__image"
-            src="{{ $article->thumb_image }}"
-            width="300"
-            height="169"
-            alt="{{ $article->title }}"
-            loading="lazy">
-
-          <div class="articles-card__inner">
-            <time class="articles-card__time" datetime="{{ $article->date }}">
-              {{ Carbon\Carbon::create($article->date)->isoFormat('DD.MM.YYYY') }}
-            </time>
-
-            <h3 class="articles-card__title">{{ $article->title }}</h3>
-
-            <div class="articles-card__description">{!! strip_tags($article->content) !!}</div>
-
-            <a
-              class="articles-card__button button"
-              href="{{ route('articles', $article->slug) }}">
-              Подробнее
-            </a>
-          </div>
-        </article>
+        <x-article-card :article="$article" />
       @endforeach
     </div>
 

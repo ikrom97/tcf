@@ -6,7 +6,7 @@
 
     <img
       class="articles-selected-screen__image"
-      src="{{ $data->article->image }}"
+      src="{{ $data->article->image ? $data->article->image->src : '' }}"
       width="600"
       height="340"
       alt="{{ $data->article->title }}"
@@ -19,7 +19,7 @@
 
       <h2 class="articles-selected-screen__title">{{ $data->article->title }}</h2>
 
-      <div class="articles-selected-screen__body">{!! $data->article->content !!}</div>
+      <div class="articles-selected-screen__body">{!! $data->article->body !!}</div>
 
       <a class="articles-selected-screen__all" href="{{ route('articles') }}">
         Вернуться ко всем статьям

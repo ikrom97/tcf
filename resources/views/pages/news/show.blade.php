@@ -6,7 +6,7 @@
 
     <img
       class="news-selected-screen__image"
-      src="{{ $data->news->image }}"
+      src="{{ $data->news->image ? $data->news->image->src : '' }}"
       width="600"
       height="340"
       alt="{{ $data->news->title }}"
@@ -20,12 +20,10 @@
       <h2 class="news-selected-screen__title">{{ $data->news->title }}</h2>
 
       <div class="news-selected-screen__body">
-        {!! $data->news->content !!}
+        {!! $data->news->body !!}
       </div>
 
-      <a class="news-selected-screen__all" href="{{ route('news') }}">
-        Вернуться ко всем новостям
-      </a>
+      <a class="news-selected-screen__all" href="{{ route('news') }}">Вернуться ко всем новостям</a>
     </div>
   </main>
 @endsection
