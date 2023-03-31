@@ -1,7 +1,7 @@
 @props(['article'])
 
 <article class="articles-card">
-  <img class="articles-card__image" src="{{ $data->article->image ? $data->article->image->src : '' }}" width="300" height="169" alt="{{ $article->title }}" loading="lazy">
+  <img class="articles-card__image" src="{{ asset($article->image ? $article->image->src : '') }}" width="300" height="169" alt="{{ $article->title }}" loading="lazy">
 
   <div class="articles-card__inner">
     <time class="articles-card__time" datetime="{{ $article->date }}">

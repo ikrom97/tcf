@@ -1437,6 +1437,7 @@ a {
 .news-card {
   border-radius: 8px;
   background-color: #e8e0c9;
+  word-break: break-all;
 }
 .news-card__image {
   border-radius: 8px 8px 0 0;
@@ -1906,6 +1907,7 @@ a {
   border-radius: 8px;
   background-color: #1c1c1c;
   color: #fff;
+  word-break: break-all;
 }
 .articles-card__image {
   border-radius: 8px 8px 0 0;

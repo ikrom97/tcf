@@ -6,7 +6,7 @@
 
     <img
       class="news-selected-screen__image"
-      src="{{ $data->news->image ? $data->news->image->src : '' }}"
+      src="{{ asset($data->news->image ? $data->news->image->src : '') }}"
       width="600"
       height="340"
       alt="{{ $data->news->title }}"

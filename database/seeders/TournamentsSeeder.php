@@ -174,7 +174,7 @@ color:#777777">3. Таджикистан<o:p></o:p></span></p>', 'created_at' =>
         'slug' => $item['slug'],
         'date' => $item['date'],
         'body' => $item['content'],
-        'image_id' => $image->id
+        'image_id' => $image->id,
       ]);
     }
   }

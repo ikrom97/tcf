@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,17 +13,12 @@ class DatabaseSeeder extends Seeder
    */
   public function run()
   {
-    User::create([
-      'login' => 'admin@chess.tj',
-      'role' => 'admin',
-      'password' => bcrypt('aHq7UoXD'),
-    ]);
-
     $this->call([
+      UsersSeeder::class,
+      TournamentsSeeder::class,
       NewsSeeder::class,
       ArticlesSeeder::class,
       PlayersSeeder::class,
-      TournamentsSeeder::class,
     ]);
   }
 }
